@@ -1,6 +1,6 @@
 import os
 import shutil
-# Select the directory from which you want to choose the files
+# Select the directory from which you want to choose the files, H was for mine  
 src_dir = 'H:/Google chrome/'
 
 # Define the destination directories
@@ -17,12 +17,9 @@ docs_extensions = ['.pdf', '.docx']
 #  the file extensions that should be moved to the zip_folder
 zip_extensions = ['.zip', '.7z', '.exe', '.msi', '.jar']
 
-# Loop over all files
 for filename in os.listdir(src_dir):
-    # Get the file extension
     file_extension = os.path.splitext(filename)[1]
 
-    # Determine the destination folder based on the file extension
     if file_extension in meme_extensions:
         dest_folder = meme_folder
     elif file_extension in docs_extensions:
@@ -36,5 +33,5 @@ for filename in os.listdir(src_dir):
     src_file = os.path.join(src_dir, filename)
     dest_file = os.path.join(dest_folder, filename)
 
-    # Move the file to the destination folder
+    # Moves the file to the destination folder
     shutil.move(src_file, dest_file)
